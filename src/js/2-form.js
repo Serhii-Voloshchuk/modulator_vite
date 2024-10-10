@@ -11,11 +11,15 @@ form.addEventListener('submit', handleFormSubmit )
 function handleFormSubmit(event){
   event.preventDefault();
 
-  const email = form.elements.email.value.trim()
+
+//Проверка заполнения всех полей формы
+
+const email = form.elements.email.value.trim()
 const message= form.elements.message.value.trim()
-if(!email || !message){
-  alert('Fill please all fields')
-  return
+
+if(!email || !message){   
+  alert('Fill please all fields')                 
+  return;
 } else {
   console.log(formData)
 }
@@ -28,6 +32,8 @@ if(!email || !message){
 
 }
 
+
+//Фонкция заполнения обьекта данными из формы
 function handleFormInput(event){
     const value = event.target.value
     const key = event.target.name
@@ -54,10 +60,12 @@ function handleFormInput(event){
     console.log(err)
     return;
   }
-
+//   console.log(key)
+// console.log(value)
 }
 
 
+//зпаолняем форму данными при открытии страницы в следующий раз
 function populateForm(){
     
   try{
@@ -78,7 +86,7 @@ function populateForm(){
 
 
 
-console.log('Hello')
+// console.log('Hello')
 
 
 
